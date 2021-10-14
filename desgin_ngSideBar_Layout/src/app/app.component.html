@@ -1,0 +1,24 @@
+<div class="root-content">
+  <app-header></app-header>
+  <app-content></app-content>
+  <app-footer></app-footer>
+</div>
+<button class="btn btn-primary">Open</button>
+<i class="fas fa-align-justify" style="cursor: pointer;" (click)="toggleSidebar()"></i>
+<ng-sidebar-container>
+  <!-- sidebar -->
+  <ng-sidebar [opened]="opened">
+    <button class="btn btn-primary" (click)="toggleSidebar()">
+      Close Side Bar
+    </button>
+    <ul class="menu">
+      <li><a routerLink="/">Dashboard</a></li>
+      <li><a routerLink="/posts">Posts</a></li>
+      <li><a routerLink="/contact">Contact</a></li>
+    </ul>
+  </ng-sidebar>
+  <div ng-sidebar-content>
+    <!-- page content -->
+    <router-outlet></router-outlet>
+  </div>
+</ng-sidebar-container>
